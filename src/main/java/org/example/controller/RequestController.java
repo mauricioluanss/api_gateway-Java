@@ -28,7 +28,7 @@ public class RequestController {
         Map<String, String> data = Map.of(
                 "clientId", "coloque aqui o id",
                 "username", "coloque o email",
-                "password", "coloque a senha");
+                "password", "coloque a senh");
 
         ObjectMapper objectMapper = new ObjectMapper();
         String json = objectMapper.writeValueAsString(data);
