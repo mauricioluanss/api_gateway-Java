@@ -26,9 +26,9 @@ public class RequestController {
          * String password = dotenv.get("PASSWORD");
          */
         Map<String, String> data = Map.of(
-                "clientId", "3veb9e18d50ceqes38o1i8mlph",
-                "username", "mauricio@payer.com.br",
-                "password", "Mau@32075997");
+                "clientId", "coloque aqui o id",
+                "username", "coloque o email",
+                "password", "coloque a senha");
 
         ObjectMapper objectMapper = new ObjectMapper();
         String json = objectMapper.writeValueAsString(data);
