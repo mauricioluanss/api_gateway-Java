@@ -1,10 +1,15 @@
 package org.example;
-
 import org.example.controller.RequestController;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Dentro da Main terão os métodos responsáveis por
+ * manter o menu de interação com o usuário e identificação
+ * do tipo de pagamento que será realizado.
+ */
 public class Main {
+    // Menu principal
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         int opcao=5;
@@ -26,7 +31,8 @@ public class Main {
         scan.close();
     }
 
-    public static void option(Scanner scan) throws Exception { //menu secundario pra selecionar o metodo de pagemento
+    //Metodo do segundo menu que vai solicitar ao usuário o tipo de pagamento.
+    public static void option(Scanner scan) throws Exception {
         RequestController request = new RequestController();
         int opcao = 5;
         do {
@@ -46,6 +52,7 @@ public class Main {
         } while (opcao!= 0);
     }
 
+    // Metodo responsável por chamar o pagamento de débito.
     public static void debito(RequestController request, Scanner scan) throws IOException, InterruptedException {
         String paymentMethod = "CARD";
         String paymentType = "DEBIT";
@@ -55,6 +62,7 @@ public class Main {
         request.chamaPagamento(value, paymentMethod, paymentType, paymentMethodSubType);
     }
 
+    // Metodo responsável por chamar o pagamento de crédito.
     public static void credito(RequestController request, Scanner scan) throws IOException, InterruptedException {
         String paymentMethod = "CARD";
         String paymentType = "CREDIT";
